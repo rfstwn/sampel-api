@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Sampel Server</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+            rel="stylesheet"
+        />
+        <style>
+            table {
+                width: 100%;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                max-width: 900px;
+                border-collapse: collapse;
+                font-family: 'Inter', sans-serif;
+                font-optical-sizing: auto;
+                font-size: 13px;
+            }
+            table thead {
+                background-color: #1f1f1f;
+                color: #fff;
+                font-weight: bold;
+            }
+            table tr td {
+                padding: 5px;
+            }
+
+            .method {
+                border-radius: 5px;
+                padding: 3px;
+                font-size: 12px;
+                text-transform: uppercase;
+                background: #d4d4d4;
+            }
+        </style>
+    </head>
+    <body>
+        <table>
+            <thead>
+                <tr>
+                    <td>Method</td>
+                    <td>Enpoint</td>
+                    <td>Description</td>
+                    <td>Body / Query Params</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <span class="method post">POST</span>
+                    </td>
+                    <td>
+                        <pre>/users/data-dummy</pre>
+                    </td>
+                    <td>Insert 5 data dummy</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="method get">GET</span>
+                    </td>
+                    <td>
+                        <pre>/users</pre>
+                    </td>
+                    <td>Get users</td>
+                    <td>
+                        <span class="params">minAge</span>
+                        <span class="params">searchName</span>
+                        <span class="params">page</span>
+                        <span class="params">limit (default 3)</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="method get">GET</span>
+                    </td>
+                    <td>
+                        <pre>/users/{id}</pre>
+                    </td>
+                    <td>Get users by id</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="method post">POST</span>
+                    </td>
+                    <td>
+                        <pre>/users</pre>
+                    </td>
+                    <td>Add new user</td>
+                    <td><pre>{"name": "string required", "age": "number required"}</pre></td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="method patch">Patch</span>
+                    </td>
+                    <td>
+                        <pre>/users/{id}</pre>
+                    </td>
+                    <td>Edit user by id</td>
+                    <td><pre>{"name": "string optional", "age": "number optional"}</pre></td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="method delete">Delete</span>
+                    </td>
+                    <td>
+                        <pre>/users/{id}</pre>
+                    </td>
+                    <td>Delete user by id, or delete all user if replace id with 'all'</td>
+                    <td><pre>-</pre></td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

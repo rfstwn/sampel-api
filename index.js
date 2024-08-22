@@ -2,6 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import userRouter from './routes/users.js';
 import bodyParser from 'body-parser';
+import path from 'path';
 
 const app = express();
 const port = 5000;
@@ -9,7 +10,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 app.get('/', (req, res) => {
-    res.send('Hello, this is Sample API for Frontend testing');
+    res.sendFile(path.resolve('index.html'));
 });
 
 app.get('/error-500', (req, res) => {
