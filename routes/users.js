@@ -97,9 +97,16 @@ userRouter.post('/', (req, res) => {
 });
 
 userRouter.delete('/:id', (req, res) => {
-    const id = req.params.id;
-    const index = data.findIndex((user) => user.id === id);
+    const { id } = req.params;
 
+    if (id === 'all') {
+        data = [];
+        return res.status(200).json({
+            message: 'success',
+        });
+    }
+
+    const index = data.findIndex((user) => user.id === id);
     if (index === -1) {
         return res.status(404).json({
             message: 'Data Not Found',
