@@ -29,15 +29,48 @@
                 font-weight: bold;
             }
             table tr td {
-                padding: 5px;
+                padding: 10px;
+                vertical-align: top;
             }
-
+            pre {
+                padding: 5px;
+                background-color: #f0f0f0;
+                border-radius: 5px;
+                margin: 0;
+                text-align: center;
+            }
             .method {
                 border-radius: 5px;
                 padding: 3px;
                 font-size: 12px;
                 text-transform: uppercase;
                 background: #d4d4d4;
+            }
+
+            .method.get {
+                background: #bebbec;
+                color: #2220ad;
+            }
+
+            .method.post {
+                background: #c3e9b9;
+                color: #17a823;
+            }
+
+            .method.patch {
+                background: #f1e8be;
+                color: #939b1f;
+            }
+
+            .method.delete {
+                background: #ffd5d5;
+                color: #c40e0e;
+            }
+
+            .params {
+                display: block;
+                font-style: italic;
+                margin-bottom: 3px;
             }
         </style>
     </head>
@@ -69,7 +102,7 @@
                     <td>
                         <pre>/users</pre>
                     </td>
-                    <td>Get users</td>
+                    <td>Get all users or filter by query params</td>
                     <td>
                         <span class="params">minAge</span>
                         <span class="params">searchName</span>
@@ -115,7 +148,39 @@
                         <pre>/users/{id}</pre>
                     </td>
                     <td>Delete user by id, or delete all user if replace id with 'all'</td>
-                    <td><pre>-</pre></td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="method get">GET</span>
+                    </td>
+                    <td>
+                        <pre>/error-500</pre>
+                    </td>
+                    <td>Simulate for Internal Server Error</td>
+                    <td>-</td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <span class="method get">GET</span>
+                    </td>
+                    <td>
+                        <pre>/error-401</pre>
+                    </td>
+                    <td>Simulate for error Unauthorized</td>
+                    <td>-</td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <span class="method get">GET</span>
+                    </td>
+                    <td>
+                        <pre>/error-404</pre>
+                    </td>
+                    <td>Simulate for error Not Found</td>
+                    <td>-</td>
                 </tr>
             </tbody>
         </table>

@@ -25,7 +25,7 @@ app.get('/error-401', (req, res) => {
     });
 });
 
-app.get('/error-401', (req, res) => {
+app.get('/error-404', (req, res) => {
     res.status(404).send({
         message: 'Data Not Found',
     });
